@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/vulnz-testing/7min_build', '.']
+  dir: 'tests/7min_build'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/vulnz-testing/debian_base', 'tests/debian_base']
+images: ['gcr.io/vulnz-testing/7min_build', 'gcr.io/vulnz-testing/debian_base']
